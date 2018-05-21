@@ -6,6 +6,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public abstract class AbstractTwitterApplicationTest {
+public abstract class AbstractFortuneTwitterTest {
     // nothing to define
 }
