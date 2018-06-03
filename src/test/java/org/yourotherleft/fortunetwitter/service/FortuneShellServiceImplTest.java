@@ -8,10 +8,10 @@ import org.yourotherleft.fortunetwitter.service.type.Fortune;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FortuneApiServiceImplTest extends AbstractFortuneTwitterTest {
+public class FortuneShellServiceImplTest extends AbstractFortuneTwitterTest {
 
     @Autowired
-    @Qualifier("fortuneApi")
+    @Qualifier("fortuneShell")
     private FortuneService fortuneService;
 
     @Test
