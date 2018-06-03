@@ -1,13 +1,13 @@
-package org.yourotherleft.fortunetwitter.controller;
+package org.yourotherleft.fortunedroid.controller;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.yourotherleft.fortunetwitter.AbstractFortuneTwitterTest;
-import org.yourotherleft.fortunetwitter.service.type.Fortune;
+import org.yourotherleft.fortunedroid.AbstractFortuneDroidTest;
+import org.yourotherleft.fortunedroid.service.type.Fortune;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FortuneRestControllerTest extends AbstractFortuneTwitterTest {
+public class FortuneRestControllerTest extends AbstractFortuneDroidTest {
 
     @Autowired
     private FortuneRestController fortuneRestController;

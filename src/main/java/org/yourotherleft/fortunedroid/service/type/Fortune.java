@@ -1,4 +1,4 @@
-package org.yourotherleft.fortunetwitter.service.type;
+package org.yourotherleft.fortunedroid.service.type;
 
 import lombok.Builder;
 import lombok.Data;

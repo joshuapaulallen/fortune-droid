@@ -1,4 +1,4 @@
-package org.yourotherleft.fortunetwitter.service;
+package org.yourotherleft.fortunedroid.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.yourotherleft.fortunetwitter.service.type.Fortune;
+import org.yourotherleft.fortunedroid.service.type.Fortune;
 
 import java.net.URI;
 import java.net.URISyntaxException;

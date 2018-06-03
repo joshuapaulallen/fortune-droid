@@ -1,4 +1,4 @@
-package org.yourotherleft.fortunetwitter;
+package org.yourotherleft.fortunedroid;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -6,6 +6,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public abstract class AbstractFortuneTwitterTest {
+public abstract class AbstractFortuneDroidTest {
     // nothing to define
 }

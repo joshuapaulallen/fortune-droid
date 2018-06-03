@@ -1,6 +1,6 @@
-package org.yourotherleft.fortunetwitter.service;
+package org.yourotherleft.fortunedroid.service;
 
-import org.yourotherleft.fortunetwitter.service.type.Fortune;
+import org.yourotherleft.fortunedroid.service.type.Fortune;
 
 public interface FortuneService {
 

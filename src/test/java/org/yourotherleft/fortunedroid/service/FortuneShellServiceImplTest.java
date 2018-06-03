@@ -1,14 +1,14 @@
-package org.yourotherleft.fortunetwitter.service;
+package org.yourotherleft.fortunedroid.service;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.yourotherleft.fortunetwitter.AbstractFortuneTwitterTest;
-import org.yourotherleft.fortunetwitter.service.type.Fortune;
+import org.yourotherleft.fortunedroid.AbstractFortuneDroidTest;
+import org.yourotherleft.fortunedroid.service.type.Fortune;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FortuneShellServiceImplTest extends AbstractFortuneTwitterTest {
+public class FortuneShellServiceImplTest extends AbstractFortuneDroidTest {
 
     @Autowired
     @Qualifier("fortuneShell")

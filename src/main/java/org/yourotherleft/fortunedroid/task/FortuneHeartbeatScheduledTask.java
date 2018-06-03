@@ -1,4 +1,4 @@
-package org.yourotherleft.fortunetwitter.task;
+package org.yourotherleft.fortunedroid.task;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.yourotherleft.fortunetwitter.service.FortuneService;
-import org.yourotherleft.fortunetwitter.service.type.Fortune;
+import org.yourotherleft.fortunedroid.service.FortuneService;
+import org.yourotherleft.fortunedroid.service.type.Fortune;
 
 @Component
 public class FortuneHeartbeatScheduledTask implements Runnable {

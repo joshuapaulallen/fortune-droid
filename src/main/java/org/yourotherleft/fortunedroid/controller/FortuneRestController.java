@@ -1,4 +1,4 @@
-package org.yourotherleft.fortunetwitter.controller;
+package org.yourotherleft.fortunedroid.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.yourotherleft.fortunetwitter.service.FortuneService;
-import org.yourotherleft.fortunetwitter.service.type.Fortune;
+import org.yourotherleft.fortunedroid.service.FortuneService;
+import org.yourotherleft.fortunedroid.service.type.Fortune;
 
 @RestController
 @RequestMapping("/fortune")

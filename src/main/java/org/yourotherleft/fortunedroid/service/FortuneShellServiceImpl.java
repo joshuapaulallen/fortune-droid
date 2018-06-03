@@ -1,9 +1,9 @@
-package org.yourotherleft.fortunetwitter.service;
+package org.yourotherleft.fortunedroid.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.yourotherleft.fortunetwitter.service.type.Fortune;
+import org.yourotherleft.fortunedroid.service.type.Fortune;
 
 import java.io.BufferedReader;
 import java.io.File;
