@@ -19,7 +19,7 @@ public class FortuneRestController {
         this.fortuneService = fortuneService;
     }
 
-    @RequestMapping(path = "/", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public Fortune getFortune() {
         return fortuneService.getFortune();
     }
