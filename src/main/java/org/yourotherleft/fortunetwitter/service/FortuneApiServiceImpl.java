@@ -52,7 +52,7 @@ public class FortuneApiServiceImpl implements FortuneService {
         // execute
         final ResponseEntity<String> response = restTemplate.exchange(fortuneApiUri, HttpMethod.GET, requestEntity, String.class);
         if (response.getStatusCode().isError()) {
-            throw new IllegalStateException(String.format("get fortune request failed, response [%s]", response));
+            throw new IllegalStateException(String.format("getFortune fortune request failed, response [%s]", response));
         }
 
         return response.getBody();
