@@ -40,7 +40,7 @@ public class FortuneShellServiceImpl implements FortuneService {
                 .text(fortuneOutput)
                 .build();
 
-        logger.info("generated new fortune using executable: {}", fortune);
+        logger.debug("generated new fortune using executable: {}", fortune);
 
         return fortune;
     }

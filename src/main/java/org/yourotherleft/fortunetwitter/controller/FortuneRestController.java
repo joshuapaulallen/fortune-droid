@@ -1,5 +1,7 @@
 package org.yourotherleft.fortunetwitter.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +14,8 @@ import org.yourotherleft.fortunetwitter.service.type.Fortune;
 @RequestMapping("/fortune")
 public class FortuneRestController {
 
+    private final static Logger logger = LoggerFactory.getLogger(FortuneRestController.class);
+
     private final FortuneService fortuneService;
 
     @Autowired
@@ -21,7 +25,11 @@ public class FortuneRestController {
 
     @RequestMapping(method = RequestMethod.GET)
     public Fortune getFortune() {
-        return fortuneService.getFortune();
+        final Fortune fortune = fortuneService.getFortune();
+
+        logger.info("fortune requested, generated {}", fortune);
+
+        return fortune;
     }
 
 }

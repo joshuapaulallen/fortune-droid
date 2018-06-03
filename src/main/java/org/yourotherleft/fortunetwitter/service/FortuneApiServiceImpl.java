@@ -38,7 +38,7 @@ public class FortuneApiServiceImpl implements FortuneService {
                 .text(fortuneResponse)
                 .build();
 
-        logger.info("generated new fortune using fortune api {}: {}", FORTUNE_API_URI, fortune);
+        logger.debug("generated new fortune using fortune api {}: {}", FORTUNE_API_URI, fortune);
 
         return fortune;
     }
