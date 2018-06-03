@@ -1,5 +1,7 @@
 package org.yourotherleft.fortunetwitter.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.yourotherleft.fortunetwitter.service.type.Fortune;
 
@@ -13,6 +15,8 @@ import java.util.stream.Collectors;
 
 @Service("fortuneShell")
 public class FortuneShellServiceImpl implements FortuneService {
+
+    private final static Logger logger = LoggerFactory.getLogger(FortuneShellServiceImpl.class);
 
     @Override
     public Fortune getFortune() {
@@ -32,9 +36,13 @@ public class FortuneShellServiceImpl implements FortuneService {
         }
 
         // build and return a fortune
-        return Fortune.builder()
+        final Fortune fortune = Fortune.builder()
                 .text(fortuneOutput)
                 .build();
+
+        logger.info("generated new fortune using executable: {}", fortune);
+
+        return fortune;
     }
 
     private String executeAndReadOutput(final Process process) throws IOException {

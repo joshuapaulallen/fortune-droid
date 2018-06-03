@@ -1,5 +1,7 @@
 package org.yourotherleft.fortunetwitter.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -14,6 +16,8 @@ import java.net.URISyntaxException;
 
 @Service("fortuneApi")
 public class FortuneApiServiceImpl implements FortuneService {
+
+    private final static Logger logger = LoggerFactory.getLogger(FortuneApiServiceImpl.class);
 
     private static final String FORTUNE_API_URI = "https://steakovercooked.com/api/fortune/";
     private static final String FORTUNE_SERVICE_USER_AGENT = "fortune-service";
@@ -30,9 +34,13 @@ public class FortuneApiServiceImpl implements FortuneService {
     public Fortune getFortune() {
         final String fortuneResponse = executeGetFortuneRequest();
 
-        return Fortune.builder()
+        final Fortune fortune = Fortune.builder()
                 .text(fortuneResponse)
                 .build();
+
+        logger.info("generated new fortune using fortune api {}: {}", FORTUNE_API_URI, fortune);
+
+        return fortune;
     }
 
     private URI initFortuneApiUri() {
