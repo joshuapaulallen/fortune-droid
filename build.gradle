@@ -23,12 +23,12 @@ apply plugin: 'net.ltgt.apt'
 apply plugin: 'com.palantir.docker'
 
 group = 'org.yourotherleft'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 sourceCompatibility = 11
 
 bootJar {
     baseName = 'fortune-droid'
-    version =  '0.0.1-SNAPSHOT'
+    version =  '1.0.0'
 }
 
 task unpack(type: Copy) {
@@ -38,7 +38,7 @@ task unpack(type: Copy) {
 }
 
 docker {
-    name "${project.group}/${bootJar.baseName}"
+    name "${project.group}/${bootJar.baseName}:${bootJar.version}"
     copySpec.from(tasks.unpack.outputs).into("dependency")
     buildArgs(['DEPENDENCY': "dependency"])
 }
