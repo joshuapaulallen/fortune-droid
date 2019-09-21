@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.7.RELEASE'
+        springBootVersion = '2.1.8.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -11,7 +11,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("net.ltgt.gradle:gradle-apt-plugin:0.15")
+        classpath("net.ltgt.gradle:gradle-apt-plugin:0.21")
         classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.22.1')
     }
 }
@@ -23,12 +23,11 @@ apply plugin: 'net.ltgt.apt'
 apply plugin: 'com.palantir.docker'
 
 group = 'org.yourotherleft'
-version = '1.0.0'
+version = '1.0.1'
 sourceCompatibility = 11
 
 bootJar {
-    baseName = 'fortune-droid'
-    version =  '1.0.0'
+    archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}"
 }
 
 task unpack(type: Copy) {
@@ -38,7 +37,7 @@ task unpack(type: Copy) {
 }
 
 docker {
-    name "${project.group}/${bootJar.baseName}:${bootJar.version}"
+    name "${project.group}/fortune-droid:${version}"
     copySpec.from(tasks.unpack.outputs).into("dependency")
     buildArgs(['DEPENDENCY': "dependency"])
 }
@@ -54,11 +53,11 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
     // sl4fj
-    compile 'org.slf4j:slf4j-api:1.7.26'
+    compile 'org.slf4j:slf4j-api:1.7.28'
 
     // lombok
-    compileOnly "org.projectlombok:lombok:1.18.8"
-    annotationProcessor "org.projectlombok:lombok:1.18.8"
+    compileOnly "org.projectlombok:lombok:1.18.10"
+    annotationProcessor "org.projectlombok:lombok:1.18.10"
 
 }
 
